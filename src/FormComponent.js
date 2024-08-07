@@ -4,7 +4,7 @@ const FormComponent = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: ''
+    phone: '' // Añadir estado para el nuevo campo
   });
 
   const handleChange = (e) => {
@@ -21,37 +21,34 @@ const FormComponent = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Nombre:</label>
+    <form onSubmit={handleSubmit} className="form">
+      <label>
+        Nombre:
         <input
           type="text"
-          id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
+      </label>
+      <label>
+        Correo Electrónico:
         <input
           type="email"
-          id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
         />
-      </div>
-      <div>
-        <label htmlFor="password">Contraseña:</label>
+      </label>
+      <label>
+        Número de Teléfono:
         <input
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
+          type="text"
+          name="phone" // Añadir nuevo campo
+          value={formData.phone}
           onChange={handleChange}
         />
-      </div>
+      </label>
       <button type="submit">Enviar</button>
     </form>
   );
